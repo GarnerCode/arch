@@ -1,5 +1,6 @@
 <template>
     <div>
+        <Header></Header>
         <main>
             <Nuxt />
         </main>
@@ -16,8 +17,10 @@
         --color-light-gray: #C8CCD8;
         --color-lighter-gray: #EEEFF4;
         --color-red: #DF5656;
+        --color-backdrop: rgba(0,0,0,0.5);
 
         --transition: 0.3s ease;
+        --mobile-x-padding: 5rem;
     }
     body {
         font-family: 'League Spartan', sans-serif;
@@ -35,20 +38,65 @@
         font-size: 18px;
         font-weight: 500;
     }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
     .button {
         border: none;
         font-size: 18px;
         font-weight: bold;
-        padding: 2rem;
         cursor: pointer;
         transition: var(--transition);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        width: 177px;
+        height: 72px;
         &.button-default {
             background-color: var(--color-primary);
             color: white;
             &:hover {
                 background-color: var(--color-dark-gray);
             }
+            &:active {
+                background-color: var(--color-light-gray);
+            }
         }
+        &.button-small {
+            width: 72px;
+        }
+    }
+    .button-group {
+        display: flex;
+        flex-direction: row;
+        button {
+            background-color: white;
+            color: var(--color-med-gray);
+            &:hover {
+                background-color: var(--color-lighter-gray);
+            }
+            &.active {
+                background-color: var(--color-primary);
+                color: white;
+            }
+        }
+    }
+    .slide-enter, .slide-leave-to {
+        opacity: 0;
+        transform: translateX(2rem);
+    }
+    .slide-enter-active, .slide-leave-active {
+        transition: all 0.3s ease;
+    }
+    .fade-enter, .fade-leave-to {
+        opacity: 0;
+    }
+    .fade-enter-active, .fade-leave-active {
+        transition: all 0.3s ease;
     }
     @media screen and (min-width: 0px) {
         h1 {
