@@ -3,6 +3,7 @@
     <Landing></Landing>
     <Welcome></Welcome>
     <About></About>
+    <Featured></Featured>
   </div>
 </template>
 

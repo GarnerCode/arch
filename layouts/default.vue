@@ -24,7 +24,7 @@
         --tablet-x-padding: calc((100vw - 573px)/2);
         --desktop-x-padding: calc((100vw - 1110px)/2);
 
-        --image-filter: brightness(50%);
+        --image-filter: brightness(60%);
     }
     body {
         font-family: 'League Spartan', sans-serif;
@@ -117,6 +117,9 @@
         h2 {
             font-size: 48px;
         }
+        h4 {
+            font-size: 32px;
+        }
     }
     @media screen and (min-width: 768px) {
         h1 {
@@ -137,9 +140,6 @@
         }
         h3 {
             font-size: 72px;
-        }
-        h4 {
-            font-size: 32px;
         }
     }
 </style>
