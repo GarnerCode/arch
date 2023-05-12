@@ -22,6 +22,9 @@
             position: relative;
             .about-img {
                 filter: var(--image-filter);
+                img {
+                    width: 100%;
+                }
             }
             .about-content {
                 padding: 0 var(--mobile-x-padding);

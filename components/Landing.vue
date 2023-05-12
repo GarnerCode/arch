@@ -26,6 +26,10 @@
             position: relative;
             .hero-img {
                 filter: var(--image-filter);
+                display: block;
+                img {
+                    width: 100%;
+                }
             }
             .landing-content {
                 position: absolute;
