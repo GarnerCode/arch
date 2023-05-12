@@ -21,6 +21,10 @@
 
         --transition: 0.3s ease;
         --mobile-x-padding: 5rem;
+        --tablet-x-padding: calc((100vw - 573px)/2);
+        --desktop-x-padding: calc((100vw - 1110px)/2);
+
+        --image-filter: brightness(50%);
     }
     body {
         font-family: 'League Spartan', sans-serif;
@@ -37,6 +41,7 @@
         color: var(--color-dark-gray);
         font-size: 18px;
         font-weight: 500;
+        line-height: 24px;
     }
     ul {
         list-style: none;
@@ -54,8 +59,9 @@
         align-items: center;
         justify-content: center;
         gap: 2rem;
-        width: 177px;
-        height: 72px;
+        padding: 3rem;
+        width: fit-content;
+        text-decoration: none;
         &.button-default {
             background-color: var(--color-primary);
             color: white;
@@ -69,6 +75,9 @@
         &.button-small {
             width: 72px;
         }
+        &.button-full {
+            width: 100%;
+        }
     }
     .button-group {
         display: flex;
@@ -76,6 +85,9 @@
         button {
             background-color: white;
             color: var(--color-med-gray);
+            padding: 0;
+            height: 72px;
+            width: 72px;
             &:hover {
                 background-color: var(--color-lighter-gray);
             }
@@ -102,12 +114,18 @@
         h1 {
             display: none;
         }
+        h2 {
+            font-size: 48px;
+        }
     }
     @media screen and (min-width: 768px) {
         h1 {
             display: block;
             font-size: 120px;
             color: var(--color-lighter-gray);
+        }
+        h2 {
+            font-size: 96px;
         }
     }
     @media screen and (min-width: 1440px) {

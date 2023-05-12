@@ -39,11 +39,8 @@
         header {
             background-color: white;
             padding: 0 var(--mobile-x-padding);
-            position: fixed;
-            top: 0;
-            left: 0;
+            position: relative;
             z-index: 10;
-            width: calc(100% - 10rem);
             height: 12rem;
             display: flex;
             flex-direction: row;
@@ -101,6 +98,32 @@
                 font-weight: bold;
                 line-height: 40px;
             }
+        }
+    }
+    @media screen and (min-width: 768px) {
+        header {
+            padding: 0 var(--tablet-x-padding);
+            justify-content: flex-start;
+            gap: 8rem;
+            .nav-list {
+                display: flex;
+                flex-direction: row;
+                gap: 8rem;
+                a {
+                    font-size: 18px;
+                    font-weight: bold;
+                    text-decoration: none;
+                    color: var(--color-med-gray);
+                }
+            }
+            .mobile-nav-toggle {
+                display: none;
+            }
+        }
+    }
+    @media screen and (min-width: 1440px) {
+        header {
+            padding: 0 var(--desktop-x-padding);
         }
     }
 </style>
