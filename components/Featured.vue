@@ -53,6 +53,11 @@
             }
             .feature {
                 position: relative;
+                cursor: pointer;
+                transition: var(--transition);
+                &:hover {
+                    transform: scale(105%);
+                }
                 img {
                     filter: var(--image-filter);
                     width: 100%;
@@ -106,6 +111,31 @@
             .features-list {
                 a {
                     display: none;
+                }
+            }
+        }
+    }
+    @media screen and (min-width: 1440px) {
+        #featured {
+            padding: 0 var(--desktop-x-padding);
+            .features-list {
+                flex-direction: row;
+            }
+            .feature {
+                .feature-img {
+                    img {
+                        width: 100%;
+                    }
+                }
+                .feature-content {
+                    flex-direction: column-reverse;
+                    align-items: flex-start;
+                    .feature-count {
+                        align-self: flex-end;
+                        position: absolute;
+                        right: -1.5rem;
+                        top: 3rem;
+                    }
                 }
             }
         }
