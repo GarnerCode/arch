@@ -2,9 +2,9 @@
     <div class="portfolio-page">
         <div class="projects-container">
             <div class="project" v-for="(project, index) of portfolioData" :key="index">
-                <img class="project-img img-mobile" :src="project.image.mobile" alt="">
-                <img class="project-img img-tablet" :src="project.image.tablet" alt="">
-                <img class="project-img img-desktop" :src="project.image.desktop" alt="">
+                <img class="project-img img-mobile" :src="project.image.mobile" :alt="`${project.title} facade`">
+                <img class="project-img img-tablet" :src="project.image.tablet" :alt="`${project.title} facade`">
+                <img class="project-img img-desktop" :src="project.image.desktop" :alt="`${project.title} facade`">
                 <div class="project-text">
                     <div class="project-title">
                         {{ project.title }}
@@ -100,7 +100,7 @@
     import { portfolioData } from '~/const/portfolioData';
 
     export default defineComponent({
-        name: 'Portfolio',
+        name: 'PortfolioPage',
         data: () => {
             return {
                 portfolioData,
