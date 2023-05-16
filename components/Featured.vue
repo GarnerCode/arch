@@ -86,6 +86,7 @@
     }
     @media screen and (min-width: 768px) {
         #featured {
+            padding: 0 var(--tablet-x-padding);
             .section-header {
                 display: flex;
                 flex-direction: row;
