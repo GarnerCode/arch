@@ -8,6 +8,7 @@
                 <img src="assets/about/desktop/image-hero.jpg" alt="">
             </picture>
             <div class="hero-text">
+                <h1>About</h1>
                 <h2>Your team of professionals</h2>
                 <p>Our small team of world-class professionals will work with you every step of the way. Strong relationships are at the core of everything we do. This extends to the relationship our projects have with their surroundings.</p>
             </div>
@@ -60,6 +61,9 @@
                 padding: 10rem 5rem;
                 padding-bottom: 0;
                 width: 75%;
+                h1 {
+                    display: none;
+                }
             }
             .heritage-container {
                 padding: 0 var(--mobile-x-padding);
@@ -91,10 +95,92 @@
         }
     }
     @media screen and (min-width: 768px) {
-
+        .about-page {
+            padding: 0 var(--tablet-x-padding);
+            .hero-text {
+                position: absolute;
+                bottom: 0;
+                right: 0;
+                h1 {
+                    display: block;
+                    position: absolute;
+                    top: -7rem;
+                    right: 0;
+                }
+                h2 {
+                    margin-top: 10rem;
+                    font-size: 72px;
+                }
+            }
+            .heritage-container {
+                padding: 0;
+                h2 {
+                    font-size: 72px;
+                }
+            }
+            .leaders-container {
+                padding: 0;
+                h2 {
+                    font-size: 72px;
+                }
+            }
+            .leader-items {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                column-gap: 1rem;
+            }
+            .leader-img {
+                width: 280px;
+            }
+        }
     }
     @media screen and (min-width: 1440px) {
-
+        .about-page {
+            padding: 0 var(--desktop-x-padding);
+            .hero-container {
+                display: flex;
+                flex-direction: row;
+            }
+            .hero-img {
+                img {
+                    width: 635px;
+                }
+            }
+            .hero-text {
+                width: 600px;
+                padding-left: 0;
+                padding-right: 0;
+                margin: 0;
+                h1 {
+                    top: -10rem;
+                    left: -5rem;
+                }
+                h2, p {
+                    width: 446px;
+                    margin-left: auto;
+                }
+            }
+            .heritage-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                gap: 6rem;
+            }
+            .heritage-img {
+                display: block;
+            }
+            .leaders-container {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .leader-items {
+                column-gap: 2rem;
+            }
+            .leader-img {
+                width: 350px;
+            }
+        }
     }
 </style>
 
