@@ -30,7 +30,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            margin-top: 15rem;
+            margin-top: calc(15rem + 60px);
             background-color: var(--color-lighter-gray);
             padding: 0 var(--mobile-x-padding);
             padding-bottom: var(--mobile-x-padding);
