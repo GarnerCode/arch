@@ -1,5 +1,9 @@
 <template>
   <div id="home-page">
+    <div class="page-tag">
+      <div class="tag-line"></div>
+      <div class="tag-label">Home</div>
+    </div>
     <Landing></Landing>
     <Welcome></Welcome>
     <About></About>

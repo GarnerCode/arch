@@ -1,5 +1,9 @@
 <template>
     <div class="about-page">
+        <div class="page-tag">
+            <div class="tag-line"></div>
+            <div class="tag-label">About Us</div>
+        </div>
         <div class="hero-container">
             <picture class="hero-img">
                 <source media="(max-width: 767px)" srcset="assets/about/mobile/image-hero.jpg">

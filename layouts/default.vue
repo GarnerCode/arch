@@ -73,8 +73,13 @@
                 background-color: var(--color-light-gray);
             }
         }
+        &.button-secondary {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+        }
         &.button-small {
             width: 72px;
+            height: 72px;
         }
         &.button-full {
             width: 100%;
@@ -121,6 +126,9 @@
         h4 {
             font-size: 32px;
         }
+        .page-tag {
+            display: none;
+        }
     }
     @media screen and (min-width: 768px) {
         h1 {
@@ -130,6 +138,30 @@
         }
         h2 {
             font-size: 96px;
+        }
+        .page-tag {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 3rem;
+            position: absolute;
+            z-index: 10;
+            top: 0rem;
+            left: 8rem;
+            transform: rotate(90deg);
+            transform-origin: 0%;
+            .tag-line {
+                height: 1px;
+                width: 104px;
+                background-color: var(--color-light-gray);
+            }
+            .tag-label {
+                font-size: 18px;
+                font-weight: 500;
+                color: var(--color-light-gray);
+                text-transform: uppercase;
+                letter-spacing: 18px;
+            }
         }
     }
     @media screen and (min-width: 1440px) {

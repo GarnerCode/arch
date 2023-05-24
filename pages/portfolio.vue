@@ -1,5 +1,9 @@
 <template>
     <div class="portfolio-page">
+        <div class="page-tag">
+            <div class="tag-line"></div>
+            <div class="tag-label">Portfolio</div>
+        </div>
         <div class="projects-container">
             <div class="project" v-for="(project, index) of portfolioData" :key="index">
                 <img class="project-img img-mobile" :src="project.image.mobile" :alt="`${project.title} facade`">

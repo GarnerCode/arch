@@ -67,6 +67,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 0;
+            width: calc(100% - 12rem);
             .logo-container {
                 position: static;
             }
@@ -75,6 +76,8 @@
             }
             .button {
                 margin: 0;
+                position: relative;
+                left: 12rem;
             }
         }
     }
@@ -82,6 +85,7 @@
         footer {
             margin: 0 var(--desktop-x-padding);
             margin-top: 15rem;
+            width: auto;
             .logo-container {
                 width: 200px;
                 height: 200px;
