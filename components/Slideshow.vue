@@ -1,7 +1,7 @@
 <template>
     <div class="slideshow">
         <div class="slides-container">
-            <div class="slide" v-for="(slide, index) of filterActiveSlide()" :key="index">
+            <div class="slide" v-for="(slide, index) of slideShowData" :key="index">
                 <img :src="slide.image" :alt="`${slide.title} facade`">
                 <div class="slide-content">
                     <h2>{{ slide.title }}</h2>
@@ -15,9 +15,9 @@
         </div>
         <div class="button-group">
             <button 
-            @click="setActiveSlide(index)"
+            @click="changeSlide(index)"
                 class="button button-small" 
-                :class="{'active': item.active}" 
+                :class="{'active': activeSlide === index}" 
                 v-for="(item, index) of slideShowData" 
                 :key="index">
                 {{ index + 1 }}
@@ -38,10 +38,12 @@
             .slides-container {
                 display: flex;
                 flex-direction: row;
-                max-width: 1110px;
+                width: 1110px;
+                overflow-x: hidden;
             }
             .slide {
                 position: relative;
+                transition: all ease 0.3s;
             }
             img {
                 filter: var(--image-filter);
@@ -78,6 +80,7 @@
         data: () => {
             return {
                 slideShowData,
+                activeSlide: 0,
             }
         },
         methods: {
@@ -89,10 +92,17 @@
                     }
                 });
             },
-            filterActiveSlide(): Array<any> {
-                return this.slideShowData.filter((slide: any) => {
-                    return slide.active;
-                });
+            changeSlide(index: number): void {
+                const slides = document.querySelectorAll('.slide');
+                const distance = (-1110 * index) + 'px';
+                this.activeSlide = index;
+                if (slides) {
+                    slides.forEach((slide: any) => {
+                        slide.setAttribute(
+                            "style", `transform: translateX(${distance})`
+                        );
+                    });
+                }
             }
         }
     })
