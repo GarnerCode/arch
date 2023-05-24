@@ -52,14 +52,7 @@
                 </div>
             </div>
         </div>
-        <div class="map-container">
-            <picture>
-                <source media="(max-width: 767px)" srcset="assets/contact/mobile/image-map.png">
-                <source media="(max-width: 1439px)" srcset="assets/contact/tablet/image-map.png">
-                <source media="(min-width: 1440px)" srcset="assets/contact/desktop/image-map.png">
-                <img src="assets/contact/desktop/image-map.png" alt="">
-            </picture>
-        </div>
+        <Map></Map>
         <div class="form-container">
             <h2>Connect<br/> with us</h2>
             <form>

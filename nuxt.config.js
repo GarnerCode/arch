@@ -15,16 +15,22 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/assets/favicon-32x32.png' }
+      { rel: 'icon', type: 'image/x-icon', href: '/assets/favicon-32x32.png' },
+      { rel: 'stylesheet', href: 'https://unpkg.com/leaflet/dist/leaflet.css' }
     ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
+    'leaflet/dist/leaflet.css'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    {
+      src: '~/plugins/nuxt-leaflet',
+      mode: 'client',
+    },
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -38,6 +44,7 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    'nuxt-leaflet',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
