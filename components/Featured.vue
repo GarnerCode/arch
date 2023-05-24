@@ -18,7 +18,7 @@
                 <div class="feature-content">
                     <div class="feature-text">
                         <h4>{{ feature.title }}</h4>
-                        <p>View All Projects</p>
+                        <NuxtLink to="/portfolio">View All Projects</NuxtLink>
                     </div>
                     <div class="feature-count">
                     {{ index + 1 }}
@@ -53,11 +53,6 @@
             }
             .feature {
                 position: relative;
-                cursor: pointer;
-                transition: var(--transition);
-                &:hover {
-                    transform: scale(105%);
-                }
                 img {
                     filter: var(--image-filter);
                     width: 100%;
@@ -72,11 +67,21 @@
                     flex-direction: column;
                     justify-content: flex-end;
                 }
-                h4, p {
+                .feature-text {
+                    width: 300px;
+                }
+                h4, a {
                     color: white;
                 }
-                p {
+                a {
                     margin: 1rem 0;
+                    text-decoration: none;
+                    display: block !important;
+                    font-size: 18px;
+                    transition: var(--transition);
+                    &:hover {
+                        letter-spacing: 5px;
+                    }
                 }
                 .feature-count {
                     display: none;

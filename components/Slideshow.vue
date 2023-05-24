@@ -6,7 +6,7 @@
                 <div class="slide-content">
                     <h2>{{ slide.title }}</h2>
                     <p>{{ slide.description }}</p>
-                    <NuxtLink to="'/portfolio'" class="button button-default">
+                    <NuxtLink to="/portfolio" class="button button-default">
                         See Our Portfolio
                         <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 1L24 10L15 19" stroke="white" stroke-width="2"/><path d="M0 10H24" stroke="white" stroke-width="2"/></svg>
                     </NuxtLink>
