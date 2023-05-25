@@ -32,6 +32,11 @@
                 gap: 3rem;
                 .project {
                     position: relative;
+                    transition: var(--transition);
+                    cursor: pointer;
+                    &:hover {
+                        transform: scale(105%);
+                    }
                 }
                 .project-img {
                     width: 100%;

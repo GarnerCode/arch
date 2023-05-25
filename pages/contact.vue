@@ -28,7 +28,7 @@
                         <p>Phone: 	123-456-3451</p>
                     </div>
                     <div class="column-right">
-                        <button class="button button-secondary">
+                        <button @click="viewTn()" class="button button-secondary">
                             View on Map
                             <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 1L24 10L15 19" stroke="#1B1D23" stroke-width="2"/><path d="M0 10H24" stroke="#1B1D23" stroke-width="2"/></svg>
                         </button>
@@ -44,7 +44,7 @@
                         <p>Phone: 832-123-4321</p>
                     </div>
                     <div class="column-right">
-                        <button class="button button-secondary">
+                        <button @click="viewTx()" class="button button-secondary">
                             View on Map
                             <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 1L24 10L15 19" stroke="#1B1D23" stroke-width="2"/><path d="M0 10H24" stroke="#1B1D23" stroke-width="2"/></svg>
                         </button>
@@ -55,15 +55,18 @@
         <Map></Map>
         <div class="form-container">
             <h2>Connect<br/> with us</h2>
-            <form>
+            <form @submit="(e) => handleSubmit(e)">
                 <div class="field">
-                    <input type="text" placeholder="Name">
+                    <div v-if="form.name.error" class="error">{{ form.name.error }}</div>
+                    <input v-model="form.name.value" type="text" placeholder="Name">
                 </div>
                 <div class="field">
-                    <input type="text" placeholder="Email">
+                    <div v-if="form.email.error" class="error">{{ form.email.error }}</div>
+                    <input v-model="form.email.value" type="text" placeholder="Email">
                 </div>
                 <div class="field">
-                    <textarea placeholder="Message"></textarea>
+                    <div v-if="form.message.error" class="error">{{ form.message.error }}</div>
+                    <textarea v-model="form.message.value" placeholder="Message"></textarea>
                     <button class="button button-default button-small">
                         <svg width="24" height="20" viewBox="0 0 24 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15 1L24 10L15 19" stroke="white" stroke-width="2"/><path d="M0 10H24" stroke="white" stroke-width="2"/></svg>
                     </button>
@@ -127,6 +130,10 @@
                     position: relative;
                     bottom: 3px;
                 }
+            }
+            .error {
+                color: red;
+                font-size: 18px;
             }
             input, textarea {
                 resize: none;
@@ -230,12 +237,39 @@
 
 <script lang="ts">
     import { defineComponent } from 'vue';
+    import { formData } from '@/const/formData';
 
     export default defineComponent({
         name: 'ContactPage',
         data: () => {
             return {
-
+                form: formData as any,
+            }
+        },
+        methods: {
+            viewTn(): void {
+                const event = new Event('viewTn');
+                document.dispatchEvent(event);
+                this.$router.push('#map');
+            },
+            viewTx(): void {
+                const event = new Event('viewTx');
+                document.dispatchEvent(event);
+                this.$router.push('#map');
+            },
+            handleSubmit(e: any): void {
+                e.preventDefault();
+                const fields = Object.values(this.form);
+                const emailPattern = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+                fields.forEach((field: any) => {
+                    this.form[`${field.id}`].error = null;
+                    if (field.id === 'email' && !emailPattern.test(field.value)) {
+                        this.form[`${field.id}`].error = 'Please use a valid email address'
+                    }
+                    if (field.value === '') {
+                        this.form[`${field.id}`].error = "Can't be empty";
+                    }
+                });
             }
         }
     })

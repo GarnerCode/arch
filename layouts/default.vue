@@ -27,6 +27,9 @@
 
         --image-filter: brightness(60%);
     }
+    html {
+        scroll-behavior: smooth;
+    }
     body {
         font-family: 'League Spartan', sans-serif;
         margin: 0;
